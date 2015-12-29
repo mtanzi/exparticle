@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept": "application/json",
+        "Authorization": "Bearer XXXXXXXXXXXXXXXXXXXX"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.particle.io/v1/devices/device_id"
+    },
+    "response": {
+      "body": "{\"user_id\":\"user_id\",\"id\":\"device_id\",\"connected\": true,\"ok\": true}",
+      "headers": {
+        "Server": "nginx/1.6.2",
+        "Date": "Tue, 29 Dec 2015 23:45:10 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "94",
+        "Connection": "keep-alive",
+        "X-Powered-By": "Express",
+        "Access-Control-Allow-Origin": "*",
+        "Cache-Control": "no-store",
+        "Pragma": "no-cache",
+        "ETag": "W/\"5e-696a0527\""
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

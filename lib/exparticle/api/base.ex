@@ -57,7 +57,10 @@ defmodule Exparticle.API.Base do
   end
 
   defp header_post do
-    %{"Content-Type" => "application/x-www-form-urlencoded"}
+    %{
+      "Accept" => "application/x-www-form-urlencoded",
+      "Content-Type" => "application/x-www-form-urlencoded",
+    }
     |> Map.merge(header)
   end
 
