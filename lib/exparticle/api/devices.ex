@@ -15,7 +15,45 @@ defmodule Exparticle.API.Devices do
   @doc """
   Fetch the information for the given device
   """
-  def device_info(id) do
-    get("/devices/#{id}") |> parse_device_info
+  def device_info(device_id) do
+    get("/devices/#{device_id}") |> parse_device_info
+  end
+
+  @doc """
+  generate a claim for the device
+  """
+  def create_claims do
+    post("/device_claims")
+  end
+
+  @doc """
+  fetch the variable requested
+  """
+  def device_vars(device_id, var_name) do
+    get("/devices/#{device_id}/#{var_name}")
+  end
+
+  def claim_device(device_id) do
+    encoded_text = URI.encode_www_form(device_id)
+    body = "id=#{encoded_text}"
+
+    post("/devices", body)
+  end
+
+  def request_transfer(device_id) do
+    encoded_text = URI.encode_www_form(device_id)
+    body = "id=#{encoded_text}&request_transfer=true"
+
+    post("/devices", body)
+  end
+
+  @doc """
+  call the functtion for th given device
+  """
+  def call_function(device_id, function, args) do
+    encoded_text = URI.encode_www_form(args)
+    body = "args=#{encoded_text}"
+
+    post("/devices/#{device_id}/#{function}", body)
   end
 end

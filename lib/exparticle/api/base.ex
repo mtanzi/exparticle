@@ -24,9 +24,12 @@ defmodule Exparticle.API.Base do
   and optionally a token, data Map and list of params.
   """
   def post(url_part, data \\ "", params \\ []) do
+    # encoded_text = URI.encode_www_form(data)
+    # body = "args=#{encoded_text}"
+
     [url_part, params]
       |> build_url
-      |> HTTPoison.post!(data, header)
+      |> HTTPoison.post!(data, header_post)
       |> handle_response
   end
 
@@ -42,8 +45,20 @@ defmodule Exparticle.API.Base do
   end
 
   defp header do
+    %{
+      "Authorization" => "Bearer #{access_token}",
+      "Accept" => "application/json"
+    }
+  end
+
+  defp access_token do
     config = Application.get_env(:exparticle, :api)
-    %{"Authorization" => "Bearer #{Dict.get(config, :access_token)}"}
+    Dict.get(config, :access_token)
+  end
+
+  defp header_post do
+    %{"Content-Type" => "application/x-www-form-urlencoded"}
+    |> Map.merge(header)
   end
 
   defp handle_response(%HTTPoison.Response{body: body, status_code: status_code}) do
