@@ -1,6 +1,6 @@
 # ExParticle
 
-### ExParticle is a client to use the [Particle Cloud API](https://docs.particle.io/reference/api/) api
+### Elixir client to communicate with [Particle Cloud API](https://docs.particle.io/reference/api/)
 
 [![Build Status](https://travis-ci.org/mtanzi/exparticle.svg?branch=master)](https://travis-ci.org/mtanzi/exparticle) [![Inline docs](http://inch-ci.org/github/mtanzi/exparticle.svg)](http://inch-ci.org/github/mtanzi/exparticle) [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
@@ -21,7 +21,7 @@ end
 ...
 
 defp deps do
-  [{:exparticle, "~> 0.0.1"}]
+  [{:exparticle, "~> 0.0.2"}]
 
 ...
 
@@ -29,7 +29,7 @@ defp deps do
 
 ### Configuration
 
-ExParticle will look for application variables, we need to create the configuration file for each environment where to store the `access_token`.
+ExParticle will look for application variables, in order to use this library we need to change the `access_token` placeholder with your Particle access token.
 
 `config/dev.exs`
 ````
