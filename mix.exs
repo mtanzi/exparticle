@@ -33,7 +33,8 @@ defmodule ExParticle.Mixfile do
       {:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5"},
       {:exvcr, "~> 0.7.0", only: [:dev, :test]},
-      {:ex_doc, "~> 0.11.2", only: [:dev, :docs]}
+      {:ex_doc, "~> 0.11.2", only: [:dev, :docs]},
+      {:excoveralls, "~> 0.4.3", only: [:dev, :test]}
     ]
   end
 end
