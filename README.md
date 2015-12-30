@@ -2,7 +2,7 @@
 
 ### Exparticle is a client to use the [Particle Cloud API](https://docs.particle.io/reference/api/) api
 
-[![Build Status](https://travis-ci.org/mtanzi/exparticle.svg?branch=master)](https://travis-ci.org/mtanzi/exparticle) [![Inline docs](http://inch-ci.org/github/mtanzi/exparticle.svg)](http://inch-ci.org/github/mtanzi/exparticle) [![Coverage Status](https://coveralls.io/repos/mtanzi/exparticle/badge.svg?branch=master&service=github)](https://coveralls.io/github/mtanzi/exparticle?branch=master) [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/mtanzi/exparticle.svg?branch=master)](https://travis-ci.org/mtanzi/exparticle) [![Inline docs](http://inch-ci.org/github/mtanzi/exparticle.svg)](http://inch-ci.org/github/mtanzi/exparticle) [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ## Usage
 
