@@ -30,7 +30,7 @@ defmodule Exparticle.API.Devices do
   fetch the variable requested
   """
   def device_vars(device_id, var_name) do
-    get("/devices/#{device_id}/#{var_name}")
+    get("/devices/#{device_id}/#{var_name}") |> parse_device_variable
   end
 
   def claim_device(device_id) do
@@ -54,6 +54,6 @@ defmodule Exparticle.API.Devices do
     encoded_text = URI.encode_www_form(args)
     body = "args=#{encoded_text}"
 
-    post("/devices/#{device_id}/#{function}", body)
+    post("/devices/#{device_id}/#{function}", body) |> parse_device_function_result
   end
 end

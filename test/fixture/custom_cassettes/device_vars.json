@@ -9,19 +9,19 @@
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "https://api.particle.io/v1/devices"
+      "url": "https://api.particle.io/v1/devices/device_id/analogvalue"
     },
     "response": {
-      "body": "[\n  {\n    \"id\": \"device_id\",\n    \"name\": \"device_name\",\n    \"last_app\": null,\n    \"last_ip_address\": \"192.168.112.10\",\n    \"last_heard\": \"2015-12-29T23:37:54.594Z\",\n    \"product_id\": 6,\n    \"connected\": false,\n    \"status\": \"normal\"\n  }\n]",
+      "body": "{\n  \"cmd\": \"VarReturn\",\n  \"name\": \"analogvalue\",\n  \"result\": 0\n}",
       "headers": {
         "Server": "nginx/1.6.2",
-        "Date": "Wed, 30 Dec 2015 08:15:51 GMT",
+        "Date": "Wed, 30 Dec 2015 08:37:02 GMT",
         "Content-Type": "application/json; charset=utf-8",
-        "Content-Length": "249",
+        "Content-Length": "291",
         "Connection": "keep-alive",
         "X-Powered-By": "Express",
         "Access-Control-Allow-Origin": "*",
-        "ETag": "W/\"f9-72dbdf9d\""
+        "ETag": "W/\"123-a6fe330e\""
       },
       "status_code": 200,
       "type": "ok"

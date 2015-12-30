@@ -4,7 +4,7 @@
       "body": "",
       "headers": {
         "Accept": "application/json",
-        "Authorization": "Bearer XXXXXXXXXXXXXXXXXXXX"
+        "Authorization": "Bearer <REMOVED>"
       },
       "method": "get",
       "options": [],
@@ -12,7 +12,7 @@
       "url": "https://api.particle.io/v1/devices/device_id"
     },
     "response": {
-      "body": "{\"user_id\":\"user_id\",\"id\":\"device_id\",\"connected\": true,\"ok\": true}",
+      "body": "{\n  \"id\": \"device_info\",\n  \"name\": \"my_device\",\n  \"connected\": true,\n  \"variables\": {\n    \"analogvalue\": \"int32\"\n  },\n  \"functions\": [\n    \"led\"\n  ],\n  \"product_id\": 6,\n  \"last_heard\": \"2015-12-30T09:05:18.760Z\",\n  \"status\": \"normal\"\n}",
       "headers": {
         "Server": "nginx/1.6.2",
         "Date": "Tue, 29 Dec 2015 23:45:10 GMT",
