@@ -1,9 +1,9 @@
-defmodule Exparticle.API.Devices do
+defmodule ExParticle.API.Devices do
   @moduledoc """
   Provides access to the `/devices` area of the Particle API.
   """
-  import Exparticle.API.Base
-  import Exparticle.Parser
+  import ExParticle.API.Base
+  import ExParticle.Parser
 
   @doc """
   Fetches all the devices for the logged user

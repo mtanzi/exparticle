@@ -1,4 +1,4 @@
-defmodule ExparticleTest do
+defmodule ExParticleTest do
   use ExUnit.Case
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
@@ -12,7 +12,7 @@ defmodule ExparticleTest do
 
   test "get all the user's devices" do
     use_cassette "devices", custom: true do
-      device = %Exparticle.Model.Device{
+      device = %ExParticle.Model.Device{
         connected: false,
         id: "device_id",
         last_heard: "2015-12-29T23:37:54.594Z",
@@ -22,13 +22,13 @@ defmodule ExparticleTest do
         status: "normal"
       }
 
-      assert device == Exparticle.devices |> List.first
+      assert device == ExParticle.devices |> List.first
     end
   end
 
   test "get the divice with the given id" do
     use_cassette "device_info", custom: true do
-      device_info = %Exparticle.Model.DeviceInfo{
+      device_info = %ExParticle.Model.DeviceInfo{
         connected: true,
         functions: ["led"],
         id: "device_info",
@@ -38,7 +38,7 @@ defmodule ExparticleTest do
         status: "normal",
         variables: %{analogvalue: "int32"}
       }
-      assert device_info == Exparticle.device_info("device_id")
+      assert device_info == ExParticle.device_info("device_id")
     end
   end
 
@@ -49,19 +49,19 @@ defmodule ExparticleTest do
         device_ids: ["device_id"]
       }
 
-      assert new_claim == Exparticle.create_claims
+      assert new_claim == ExParticle.create_claims
     end
   end
 
   test "device variables" do
     use_cassette "device_vars", custom: true do
-      device_var = %Exparticle.Model.DeviceVariable{
+      device_var = %ExParticle.Model.DeviceVariable{
         cmd: "VarReturn",
         name: "analogvalue",
         result: 0,
       }
 
-      assert device_var == Exparticle.device_vars("device_id", "analogvalue")
+      assert device_var == ExParticle.device_vars("device_id", "analogvalue")
     end
   end
 
@@ -74,7 +74,7 @@ defmodule ExparticleTest do
         user_id: "user_id"
       }
 
-      assert res == Exparticle.claim_device("device_id")
+      assert res == ExParticle.claim_device("device_id")
     end
   end
 
@@ -87,19 +87,19 @@ defmodule ExparticleTest do
         user_id: "user_id"
       }
 
-      assert res == Exparticle.request_transfer("device_id")
+      assert res == ExParticle.request_transfer("device_id")
     end
   end
 
   test "a function call" do
     use_cassette "call_function", custom: true do
-      res = %Exparticle.Model.DeviceFunctionResult{
+      res = %ExParticle.Model.DeviceFunctionResult{
         id: "device_id",
         last_app: "",
         connected: true,
         return_value: 1
       }
-      Exparticle.call_function("device_id", "led", "on")
+      ExParticle.call_function("device_id", "led", "on")
     end
   end
 

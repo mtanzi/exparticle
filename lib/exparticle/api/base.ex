@@ -1,10 +1,10 @@
-defmodule Exparticle.API.Base do
+defmodule ExParticle.API.Base do
   require Logger
 
   @moduledoc """
   Provides general request making and handling functionality (for internal use).
   """
-  alias Exparticle.Config
+  alias ExParticle.Config
 
   @base_url "https://api.particle.io/v1"
 
@@ -68,7 +68,7 @@ defmodule Exparticle.API.Base do
     response = Poison.decode!(body, keys: :atoms)
     case status_code do
       200 -> response
-      _ -> raise(Exparticle.Error, [code: response.meta.code, message: "#{response.meta.error_type}: #{response.meta.error_message}"])
+      _ -> raise(ExParticle.Error, [code: response.meta.code, message: "#{response.meta.error_type}: #{response.meta.error_message}"])
     end
   end
 

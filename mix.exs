@@ -1,4 +1,4 @@
-defmodule Exparticle.Mixfile do
+defmodule ExParticle.Mixfile do
   use Mix.Project
 
   def project do
