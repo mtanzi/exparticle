@@ -6,8 +6,6 @@ defmodule ExParticle.API.Base do
   """
   alias ExParticle.Config
 
-  @base_url "https://api.particle.io/v1"
-
   @doc """
   General HTTP `GET` request function. Takes a url part
   and optionally a token and list of params.
@@ -73,10 +71,15 @@ defmodule ExParticle.API.Base do
   end
 
   defp build_url([part, []]) do
-   "#{@base_url}#{part}"
+   "#{base_url}#{part}"
   end
   defp build_url([part, params]) do
-    "#{@base_url}#{part}?#{params_join(params)}"
+    "#{base_url}#{part}?#{params_join(params)}"
+  end
+
+  defp base_url do
+    Application.get_env(:exparticle, :api)
+    |> Dict.get(:base_url)
   end
 
   defp params_join(params) do
