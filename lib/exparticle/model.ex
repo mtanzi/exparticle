@@ -13,3 +13,22 @@ end
 defmodule ExParticle.Model.DeviceFunctionResult do
   defstruct id: nil, last_app: nil, connected: nil, return_value: nil
 end
+
+defmodule ExParticle.Model.SseEvent do
+  defstruct name: nil, data: nil, ttl: nil, published_at: nil, coreid: nil
+
+  def parse("\n"), do: :heartbeat
+  def parse(":ok\n\n"), do: :connection_success
+  def parse(chunk) do
+    case chunk |> String.strip |> String.split("\n") do
+      ["event: " <> event_name] ->
+        {:name, event_name}
+      ["data: " <> all_data] ->
+        {:data, Poison.decode!(all_data)}
+      ["event: " <> event_name, "data: " <> all_data] ->
+        event = Poison.decode!(all_data)
+               |> Map.put(:event, event_name)
+        {:event, event}
+    end
+  end
+end
