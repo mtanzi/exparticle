@@ -34,7 +34,7 @@ defmodule ExParticle.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 2.2", override: true},
+      {:poison, "~> 2.2"},
       {:exvcr, "~> 0.7.0", only: [:dev, :test]},
       {:ex_doc, "~> 0.11.2", only: [:dev, :docs]},
       {:inch_ex, "~> 0.4.0", only: [:dev, :docs]},
