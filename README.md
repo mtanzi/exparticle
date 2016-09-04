@@ -21,7 +21,7 @@ end
 ...
 
 defp deps do
-  [{:exparticle, "~> 0.0.2"}]
+  [{:exparticle, "~> 0.0.5"}]
 
 ...
 
